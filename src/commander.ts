@@ -99,6 +99,16 @@ export class Commander {
         this.build()
     }
 
+    tclEnMath() {
+        const editor = vscode.window.activeTextEditor
+
+        if (editor && editor.selection.isEmpty) {
+            const position = editor.selection.active
+            const snippet = new vscode.SnippetString('$$0$')
+            editor.insertSnippet(snippet, position)
+        }
+    }
+
     recipes(recipe?: string) {
         this.extension.logger.addLogMessage(`RECIPES command invoked.`)
         const configuration = vscode.workspace.getConfiguration('latex-workshop')

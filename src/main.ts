@@ -192,6 +192,7 @@ export async function activate(context: vscode.ExtensionContext) {
     }
 
     vscode.commands.registerCommand('tcl.cxm.buildLatex', () => extension.commander.tclBuildLatex())
+    vscode.commands.registerCommand('tcl.cxm.enMath', () => extension.commander.tclEnMath())
 
     vscode.commands.registerCommand('latex-workshop.saveWithoutBuilding', () => extension.commander.saveWithoutBuilding())
     vscode.commands.registerCommand('latex-workshop.build', () => extension.commander.build())

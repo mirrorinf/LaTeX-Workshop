@@ -41,7 +41,8 @@
     "onCommand:latex-workshop.compilerlog",
     "onCommand:latex-workshop.log",
     "onCommand:latex-workshop.actions",
-    "onCommand:tcl.cxm.buildLatex"
+    "onCommand:tcl.cxm.buildLatex",
+    "onCommand:tcl.cxm.enMath"
   ],
   "main": "./out/src/main.js",
   "contributes": {
@@ -178,6 +179,10 @@
       {
         "command": "tcl.cxm.buildLatex",
         "title": "编译"
+      },
+      {
+        "command": "tcl.cxm.enMath",
+        "title": "$·$"
       },
       {
         "command": "latex-workshop.select-envname",
@@ -1257,6 +1262,11 @@
           "command": "tcl.cxm.buildLatex",
           "group": "plusieur",
           "when": "editorLangId == latex"
+        },
+        {
+          "command": "tcl.cxm.enMath",
+          "group": "plusieur",
+          "when": "editorLangId == latex"
         }
       ]
     },
@@ -1300,6 +1310,7 @@
     "workspaceSymbolProvider": "true"
   },
   "dependencies": {
+    "acorn": "^6.1.1",
     "chokidar": "^2.0.3",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.1",
