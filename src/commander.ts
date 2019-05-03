@@ -95,6 +95,10 @@ export class Commander {
         await vscode.commands.executeCommand('revealFileInOS', vscode.Uri.file(outputDir))
     }
 
+    tclBuildLatex() {
+        this.build()
+    }
+
     recipes(recipe?: string) {
         this.extension.logger.addLogMessage(`RECIPES command invoked.`)
         const configuration = vscode.workspace.getConfiguration('latex-workshop')

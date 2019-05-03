@@ -1,6 +1,6 @@
 {
   "name": "latex-workshop",
-  "displayName": "LaTeX Workshop",
+  "displayName": "LaTeX Workshop山寨版",
   "description": "Boost LaTeX typesetting efficiency with preview, compile, autocomplete, colorize, and more.",
   "icon": "icon.png",
   "version": "6.5.1",
@@ -40,7 +40,8 @@
     "onCommand:latex-workshop.wordcount",
     "onCommand:latex-workshop.compilerlog",
     "onCommand:latex-workshop.log",
-    "onCommand:latex-workshop.actions"
+    "onCommand:latex-workshop.actions",
+    "onCommand:tcl.cxm.buildLatex"
   ],
   "main": "./out/src/main.js",
   "contributes": {
@@ -173,6 +174,10 @@
         "command": "latex-workshop.navigate-envpair",
         "title": "Navigate to matching begin/end",
         "category": "LaTeX Workshop"
+      },
+      {
+          "command": "tcl.cxm.buildLatex",
+          "title": "编译",
       },
       {
         "command": "latex-workshop.select-envname",
@@ -1250,6 +1255,13 @@
           "when": "view == latex-structure",
           "command": "latex-structure.toggle-follow-cursor"
         }
+      ],
+      "touchBar": [
+          {
+              "command": "tcl.cxm.buildLatex",
+              "group": "plusieur",
+              "when": "editorLangId == latex"
+          }
       ]
     },
     "viewsContainers": {
