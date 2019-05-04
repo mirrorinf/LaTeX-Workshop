@@ -42,7 +42,9 @@
     "onCommand:latex-workshop.log",
     "onCommand:latex-workshop.actions",
     "onCommand:tcl.cxm.buildLatex",
-    "onCommand:tcl.cxm.enMath"
+    "onCommand:tcl.cxm.enMath",
+    "onCommand:tcl.cxm.enBegin",
+    "onCommand:tcl.cxm.enPaten"
   ],
   "main": "./out/src/main.js",
   "contributes": {
@@ -183,6 +185,14 @@
       {
         "command": "tcl.cxm.enMath",
         "title": "$·$"
+      },
+      {
+        "command": "tcl.cxm.enBegin",
+        "title": "\\begin"
+      },
+      {
+        "command": "tcl.cxm.enPaten",
+        "title": "(·)"
       },
       {
         "command": "latex-workshop.select-envname",
@@ -1265,7 +1275,17 @@
         },
         {
           "command": "tcl.cxm.enMath",
-          "group": "plusieur",
+          "group": "snippet",
+          "when": "editorLangId == latex"
+        },
+        {
+          "command": "tcl.cxm.enBegin",
+          "group": "snippet",
+          "when": "editorLangId == latex"
+        },
+        {
+          "command": "tcl.cxm.enPaten",
+          "group": "snippet",
           "when": "editorLangId == latex"
         }
       ]

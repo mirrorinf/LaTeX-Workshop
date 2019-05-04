@@ -109,6 +109,26 @@ export class Commander {
         }
     }
 
+    tclEnBegin() {
+        const editor = vscode.window.activeTextEditor
+
+        if (editor && editor.selection.isEmpty) {
+            const position = editor.selection.active
+            const snippet = new vscode.SnippetString('\\begin{$1}$2\n\t$0\n\\end{$1}')
+            editor.insertSnippet(snippet, position)
+        }
+    }
+
+    tclEnPaten() {
+        const editor = vscode.window.activeTextEditor
+
+        if (editor && editor.selection.isEmpty) {
+            const position = editor.selection.active
+            const snippet = new vscode.SnippetString('\left($0\right)')
+            editor.insertSnippet(snippet, position)
+        }
+    }
+
     recipes(recipe?: string) {
         this.extension.logger.addLogMessage(`RECIPES command invoked.`)
         const configuration = vscode.workspace.getConfiguration('latex-workshop')
